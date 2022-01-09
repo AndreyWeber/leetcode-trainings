@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvertBinaryTree", "InvertB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckoutTestTask", "CheckoutTestTask\CheckoutTestTask.csproj", "{3B424617-7278-45A6-9D68-396E87B016D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniqueEmailAddresses", "UniqueEmailAddresses\UniqueEmailAddresses.csproj", "{699FEEBE-B7F8-46D4-A425-384BC86F1939}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{3B424617-7278-45A6-9D68-396E87B016D0}.Release|x64.Build.0 = Release|Any CPU
 		{3B424617-7278-45A6-9D68-396E87B016D0}.Release|x86.ActiveCfg = Release|Any CPU
 		{3B424617-7278-45A6-9D68-396E87B016D0}.Release|x86.Build.0 = Release|Any CPU
+		{699FEEBE-B7F8-46D4-A425-384BC86F1939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{699FEEBE-B7F8-46D4-A425-384BC86F1939}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{699FEEBE-B7F8-46D4-A425-384BC86F1939}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{699FEEBE-B7F8-46D4-A425-384BC86F1939}.Debug|x64.Build.0 = Debug|Any CPU
+		{699FEEBE-B7F8-46D4-A425-384BC86F1939}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{699FEEBE-B7F8-46D4-A425-384BC86F1939}.Debug|x86.Build.0 = Debug|Any CPU
+		{699FEEBE-B7F8-46D4-A425-384BC86F1939}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{699FEEBE-B7F8-46D4-A425-384BC86F1939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{699FEEBE-B7F8-46D4-A425-384BC86F1939}.Release|x64.ActiveCfg = Release|Any CPU
+		{699FEEBE-B7F8-46D4-A425-384BC86F1939}.Release|x64.Build.0 = Release|Any CPU
+		{699FEEBE-B7F8-46D4-A425-384BC86F1939}.Release|x86.ActiveCfg = Release|Any CPU
+		{699FEEBE-B7F8-46D4-A425-384BC86F1939}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

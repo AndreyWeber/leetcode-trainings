@@ -11,7 +11,7 @@
             "WARNING01": "***** TEST WARNING *****",
             "WARNING02": "${workspaceFolder}",
             "preLaunchTask": ".NET Core Build Solution",
-            "program": "${workspaceFolder}/InvertBinaryTree/bin/Debug/net5.0/InvertBinaryTree.exe",
+            "program": "${workspaceFolder}/UniqueEmailAddresses/bin/Debug/net5.0/UniqueEmailAddresses.exe",
             "args": [],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
