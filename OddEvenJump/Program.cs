@@ -7,64 +7,41 @@ namespace OddEvenJump
 {
     class Program
     {
-        public static Int32 OddNumberedJump(Int32[] arr, Int32 currentIdx)
+        public static Int32 OddNumberedJump(List<(Int32 value, Int32 index)> collection, Int32 valToCompare)
         {
-            if (currentIdx == arr.Length - 1)
-            {
-                return currentIdx;
-            }
-
-            var valToCompare = arr[currentIdx];
-
-            var minRes = arr
-                .Select(((value, index) => (value, index)))
-                .Skip(currentIdx + 1)
+            var groups = collection
                 .GroupBy(
                     item => item.value,
                     item => item.index,
                     (value, indices) => (value, minIndex: indices.Min())
-                )
-                .Min(item => valToCompare <= item.value ? item : (value: Int32.MaxValue, minIndex: -1));
+                );
+            var minRes = groups.Min(item => valToCompare <= item.value ? item : (value: Int32.MaxValue, minIndex: -1));
 
             return minRes.minIndex;
         }
 
-        public static Int32 EvenNumberedJump(Int32[] arr, Int32 currentIdx)
+        public static Int32 EvenNumberedJump(List<(Int32 value, Int32 index)> collection, Int32 valToCompare)
         {
-            if (currentIdx == arr.Length - 1)
-            {
-                return currentIdx;
-            }
-
-            var valToCompare = arr[currentIdx];
-
-            var maxRes = arr
-                .Select(((value, index) => (value, index)))
-                .Skip(currentIdx + 1)
+            var groups = collection
                 .GroupBy(
                     item => item.value,
                     item => item.index,
                     (value, indices) => (value, minIndex: indices.Min())
-                )
-                .Max(item => valToCompare >= item.value ? item : (value: Int32.MinValue, minIndex: -1));
+                );
+            var maxRes = groups.Max(item => valToCompare >= item.value ? item : (value: Int32.MinValue, minIndex: -1));
 
             return maxRes.minIndex;
         }
 
-        public static Int32 OddEvenJumps(Int32[] arr)
+        /**
+         * Correct, but brute force solution
+         * O(N^2)
+         */
+        public static Int32 OddEvenJumpsBruteForce(Int32[] arr)
         {
-            // var valIdxGroups = arr
-            //     .Select(((value, index) => (value, index)))
-            //     .GroupBy(
-            //         item => item.value,
-            //         item => item.index,
-            //         (value, indices) => (value, minIndex: indices.Min(), indices.ToList(), found: false)
-            //     )
-            //     .OrderBy(item => item.value);
-
-            /**
-             * Correct, but not optimal solution
-             */
+            var collection = arr
+                .Select((value, index) => (value, index))
+                .ToList();
 
             Int32 goodIndicies = 0;
             for (var i = 0; i < arr.Length; i++)
@@ -74,8 +51,8 @@ namespace OddEvenJump
                 while (currentJumpIdx >= 0)
                 {
                     currentJumpIdx = currentJump % 2 == 0
-                        ? EvenNumberedJump(arr, currentJumpIdx)
-                        : OddNumberedJump(arr, currentJumpIdx);
+                        ? EvenNumberedJump(collection, currentJumpIdx)
+                        : OddNumberedJump(collection, currentJumpIdx);
 
                     if (currentJumpIdx == arr.Length - 1)
                     {
@@ -90,13 +67,63 @@ namespace OddEvenJump
             return goodIndicies;
         }
 
+        /**
+         * Correct solution based on dynamic programming approach
+         * Still can be significantly improved
+         * The idea is to start from the end of an input array and
+         * back track each odd and even jump leading to the end of array
+         * It will let to define all "good indicies" we can start from to reach
+         * out the end of array
+         * O(N)
+         */
+        public static Int32 OddEvenJumpsDynamicProgramming(Int32[] arr)
+        {
+            var arrLength = arr.Length;
+
+            var oddJumps = new Boolean[arrLength];
+            var evenJumps = new Boolean[arrLength];
+
+            oddJumps[arrLength - 1] = true;
+            evenJumps[arrLength - 1] = true;
+
+            var backTrack = new List<(Int32 value, Int32 index)>();
+            backTrack.Add((value: arr[arrLength - 1], index: arrLength - 1));
+
+            var goodIndexCount = 1;
+            for (var i = arrLength - 2; i >= 0; --i)
+            {
+                // Both methods can be improved
+                var odd = OddNumberedJump(backTrack, arr[i]);
+                var even = EvenNumberedJump(backTrack, arr[i]);
+
+                if (odd > -1)
+                {
+                    oddJumps[i] = evenJumps[odd];
+                }
+
+                if (even > -1)
+                {
+                    evenJumps[i] = oddJumps[even];
+                }
+
+                if (oddJumps[i])
+                {
+                    goodIndexCount++;
+                }
+
+                backTrack.Add((value: arr[i], index: i));
+            }
+
+            return goodIndexCount;
+        }
+
         static void Main(string[] args)
         {
             // Int32[] arr = new Int32[] { 10, 13, 12, 14, 15 };
 
             Int32[] arr = new Int32[] { 2, 3, 1, 1, 4 };
 
-            //Int32[] arr = new Int32[] { 5,1,3,4,2 };
+            //Int32[] arr = new Int32[] { 5, 1, 3, 4, 2 };
 
             // Int32[] arr = new Int32[] {1,2,3,2,1,4,4,5};
 
@@ -109,7 +136,7 @@ namespace OddEvenJump
             //     content.Split(new[] {","}, StringSplitOptions.RemoveEmptyEntries),
             //     Int32.Parse);
 
-            var goodIndicies = OddEvenJumps(arr);
+            var goodIndicies = OddEvenJumpsDynamicProgramming(arr);
 
             Console.WriteLine($"Number of good starting indicies {goodIndicies}");
         }
