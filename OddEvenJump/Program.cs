@@ -74,7 +74,7 @@ namespace OddEvenJump
          * back track each odd and even jump leading to the end of array
          * It will let to define all "good indicies" we can start from to reach
          * out the end of array
-         * O(N)
+         * O(NlogN)
          */
         public static Int32 OddEvenJumpsDynamicProgramming(Int32[] arr)
         {

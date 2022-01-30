@@ -11,7 +11,7 @@
             "WARNING01": "***** TEST WARNING *****",
             "WARNING02": "${workspaceFolder}",
             "preLaunchTask": ".NET Core Build Solution",
-            "program": "${workspaceFolder}/OddEvenJump/bin/Debug/net5.0/OddEvenJump.exe",
+            "program": "${workspaceFolder}/LicenseKeyFormatting/bin/Debug/net5.0/LicenseKeyFormatting.exe",
             "args": [],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
