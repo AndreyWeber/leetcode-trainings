@@ -5,13 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": ".NET Core Launch (InvertBinaryTree)",
+            "name": ".NET Core Launch (BinarySearch)",
             "type": "coreclr",
             "request": "launch",
-            "WARNING01": "***** TEST WARNING *****",
-            "WARNING02": "${workspaceFolder}",
             "preLaunchTask": ".NET Core Build Solution",
-            "program": "${workspaceFolder}/LicenseKeyFormatting/bin/Debug/net5.0/LicenseKeyFormatting.exe",
+            "program": "${workspaceFolder}/BinarySearch/bin/Debug/net7.0/BinarySearch.exe",
             "args": [],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
