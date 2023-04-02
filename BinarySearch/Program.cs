@@ -8,25 +8,63 @@ public class Solution
 {
     public static void Main(string[] args)
     {
-        // var nums = new[] { -1,0,3,5,9,12 };
+         var nums = new[] { -1,0,3,5,9,12 };
         // var nums = new[] { 5 };
         // var nums = new[] { -1,0,5 };
         // var nums = new[] { 2, 5 };
-        var nums = new[] { -1,0,3,5,9,12 };
-        // const int target = 9;
+        // var nums = new[] { -1,0,3,5,9,12 };
+        const int target = 9;
         // const int target = 2;
         // const int target = -5;
         // const int target = 5;
         // const int target = -1;
-        const int target = 0;
+        // const int target = 0;
 
-        var result = Search(nums, target);
+        var result = LoopSearch(nums, target);
 
         Console.WriteLine(result);
         Console.ReadKey(true);
     }
 
-    public static int Search(int[] nums, int target)
+    /// <summary>
+    /// Search using while loop
+    /// Runtime complexity: O(log N)
+    /// </summary>
+    public static int LoopSearch(int[] nums, int target)
+    {
+        var left = 0;
+        var right = nums.Length - 1;
+        int middle;
+
+        while (left <= right)
+        {
+            middle = (left + right) / 2;
+
+            if (nums[middle] == target)
+            {
+                return middle;
+            }
+
+            if (nums[middle] < target)
+            {
+                left = middle + 1;
+                continue;
+            }
+
+            if (nums[middle] > target)
+            {
+                right = middle - 1;
+            }
+        }
+
+        return -1;
+    }
+
+    /// <summary>
+    /// Recursion search
+    /// Runtime complexity: O(log N)
+    /// </summary>
+    public static int RecurSearch(int[] nums, int target)
     {
         var innerNums = nums.Select((val, idx) => (idx: idx, val: val)).ToArray();
 
