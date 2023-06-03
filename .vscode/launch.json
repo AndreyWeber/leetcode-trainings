@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": ".NET Core Launch (BinarySearch)",
+            "name": ".NET Core Launch",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": ".NET Core Build Solution",
-            "program": "${workspaceFolder}/BinarySearch/bin/Debug/net7.0/BinarySearch.exe",
+            "program": "${workspaceFolder}/SecuritiesResearch/bin/Debug/net7.0/SecuritiesResearch.exe",
             "args": [],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,

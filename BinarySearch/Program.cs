@@ -96,7 +96,7 @@ public class Solution
 
             return (-1, -1);
         }
-        
+
         var result = InnerSearch(innerNums);
 
         return result.idx;
