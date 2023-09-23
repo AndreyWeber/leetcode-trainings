@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecuritiesResearch", "Secur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseString", "ReverseString\ReverseString.csproj", "{32B1D988-8F4E-4EC0-9634-0B52C9504576}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortedSquares", "SortedSquares\SortedSquares.csproj", "{BDED6641-2EF6-4823-BAF0-31ADAC6AACCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -170,5 +172,17 @@ Global
 		{32B1D988-8F4E-4EC0-9634-0B52C9504576}.Release|x64.Build.0 = Release|Any CPU
 		{32B1D988-8F4E-4EC0-9634-0B52C9504576}.Release|x86.ActiveCfg = Release|Any CPU
 		{32B1D988-8F4E-4EC0-9634-0B52C9504576}.Release|x86.Build.0 = Release|Any CPU
+		{BDED6641-2EF6-4823-BAF0-31ADAC6AACCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDED6641-2EF6-4823-BAF0-31ADAC6AACCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDED6641-2EF6-4823-BAF0-31ADAC6AACCB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BDED6641-2EF6-4823-BAF0-31ADAC6AACCB}.Debug|x64.Build.0 = Debug|Any CPU
+		{BDED6641-2EF6-4823-BAF0-31ADAC6AACCB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BDED6641-2EF6-4823-BAF0-31ADAC6AACCB}.Debug|x86.Build.0 = Debug|Any CPU
+		{BDED6641-2EF6-4823-BAF0-31ADAC6AACCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDED6641-2EF6-4823-BAF0-31ADAC6AACCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDED6641-2EF6-4823-BAF0-31ADAC6AACCB}.Release|x64.ActiveCfg = Release|Any CPU
+		{BDED6641-2EF6-4823-BAF0-31ADAC6AACCB}.Release|x64.Build.0 = Release|Any CPU
+		{BDED6641-2EF6-4823-BAF0-31ADAC6AACCB}.Release|x86.ActiveCfg = Release|Any CPU
+		{BDED6641-2EF6-4823-BAF0-31ADAC6AACCB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
